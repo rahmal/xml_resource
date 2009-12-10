@@ -1,0 +1,23 @@
+## Configuration for xml resorces
+## Rahmal Conda <rahmal@gmail.com>
+## 2009-12-09
+
+# Indicates whether type tags should
+# be specified in the xml output.
+use_type: true
+
+# Indicates whether a objects initialize
+# method should be used when instantiating
+# it or bypassed in favor of loading
+# instance data later.
+bypass_initialize: true
+
+# Formats for parsing strings into 
+# appropriate data types.
+formats:
+  date: '%Y-%b-%d'
+  time: '%Y-%b-%d %H:%M:%S'
+
+# Delimter used in array data in the xml output.
+array:
+  delimiter: ','
