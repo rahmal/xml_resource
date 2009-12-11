@@ -2,6 +2,10 @@
 ## Rahmal Conda <rahmal@gmail.com>
 ## 2009-12-09
 
+# The xml library to use to render
+# and parse xml files.
+xml_renderer: 'rexml-element'
+
 # Indicates whether type tags should
 # be specified in the xml output.
 use_type: true

@@ -1,3 +1,5 @@
+require 'singleton'
+
 ##
 # Copyright (c) 2009 Rahmal Conda <rahmal@gmail.com>
 #
@@ -49,10 +51,10 @@ class XmlResourceUtil
 
   def config
     return @config unless @config.nil?
-    conf_dir = File.expand_path(CONFIG_ROOT) if CONFIG_ROOT
+    conf_dir = File.expand_path(CONFIG_ROOT) if defined? CONFIG_ROOT
     unless conf_dir
-      root_dir = RAILS_ROOT if RAILS_ROOT
-      root_dir = APP_ROOT if APP_ROOT && root_dir.nil?
+      root_dir = RAILS_ROOT if defined? RAILS_ROOT
+      root_dir = APP_ROOT if defined?(APP_ROOT) && root_dir.nil?
       root_dir = File.dirname(__FILE__) unless root_dir
       root_dir = File.expand_path(root_dir)
       conf_dir = File.join(root_dir, 'config')
@@ -60,6 +62,15 @@ class XmlResourceUtil
     conf_file = File.join(conf_dir, 'xml_resource.yml')
     @config = YAML::load(File.open(conf_file))
   end
+
+  def xml_renderer
+    @xml_renderer ||= class_for(xml_class_name)
+  end
+
+  def xml_class_name
+    @xml_class_name ||= config['xml_renderer']
+  end
+
 
 end
 

@@ -1,7 +1,9 @@
+require 'xml_resource_util'
+
 ##
 # Copyright (c) 2009 Rahmal Conda <rahmal@gmail.com>
 #
-# Extension of string for xml processing.
+# Extension of String for xml processing.
 class String
 
   # Shortcut method to true string into boolean

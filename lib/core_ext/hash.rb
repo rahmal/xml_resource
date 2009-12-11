@@ -1,3 +1,9 @@
+require 'xml_resource_util'
+
+##
+# Copyright (c) 2009 Rahmal Conda <rahmal@gmail.com>
+#
+# Extension of Hash for xml processing.
 class Hash
 
   @pair_delimiter =  ","
